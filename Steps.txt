@@ -1,0 +1,74 @@
+Create a freestyle project with the name DEVELOPER_CODE_REVIEW in Jenkins to perform
+code review.
+Step 1: In your browser, navigate to Jenkins Home page
+Step 2: Click on the “New Item”
+Give the item name as DEVELOPER_CODE_REVIEW and select Freestyle project.
+You will be redirected to DEVELOPER_CODE_REVIEW configuration page.
+In Goals and option field of Build, write “-P metrics pmd:pmd” (ensure that pmd plugin is
+installed on your machine)
+You can install pmd plugin by going to “Manage Jenkins” option on the Jenkins dashboard
+and then navigating to the “Manage Plugins” option. Search for the pmd plugin and install it.
+Click on Post Steps tab
+Then navigate to Build settings and check on “Publish PMD analysis result” checkbox.
+Click on Apply and then Save.
+
+Step 1: In your browser, navigate to Jenkins Home page
+Step 2: Click on the “New Item”
+Step 3: Give Item Name as QA_UNIT_TEST and select freestyle project.
+Click OK
+You will be redirected to the configuration Page of QA_UNIT_TEST.
+Step 4: In Source code management, select Git radio button and add your repository link in
+the Repository URL field.
+
+Step 1: In Build, enter “test” in Goals and options field.
+Click Save.
+Step 2: Navigate to the Build trigger tab in Configuration option of QA_UNIT_TEST.
+Step 3: Check the “build after other projects are built” checkbox
+Step 4: Select the “DEVELOPER_CODE_REVIEW” project that you have built earlier
+Step 5: Click on Save
+Step 6: Navigate to the Post build action in the DEVELOPER_CODE_REVIEW configuration
+settings and write “QA_TEST” in the Projects to build field. Apply and Save.
+
+Create a freestyle project with the name QA_ METRICS _CHECK in Jenkins to check the test cases.
+Step 1: In your browser, navigate to Jenkins Home page
+Step 2: Click on the “New Item
+Give the item name as QA_ METRICS_CHECK and select as Freestyle Project.
+In its source code management, give your Git repository link.
+In Pre step option, navigate to Goals and options field mention “cobertura:cobertura”
+(Ensure that cobertura plugin is installed on your machine)
+Click Save.
+Navigate to the Build Trigger tab of the QA_METRICS_CHECK configuration and check on the
+“Build after other projects are built” check box and mention QA_UNIT_TEST in the field provided
+
+Click Save
+Go to Jenkins Dashboard navigate to the QA_UNIT_TEST configuration and navigate to Post
+build actions.
+Mention QA_Metrics in Projects to build field.
+
+Apply and Save.
+Go to post Steps in the QA_METRICS_CHECK configuration.
+Select Publish HTML Reports from the Post Build Action menu.
+Write “target/site/cobertura” in the HTML directive to archive field.
+In Report Title, write Cobertura Test Result.
+
+Apply and Save.
+Build the QA_METRICS_CHECK project.
+Create a freestyle project with the name QA_ PACKAGE in Jenkins to create an executable
+jar/war file.
+Step1: Create a new Freestyle Project named QA_ PACKAGE from the Jenkins Dashboard.
+
+Navigate to Configuration Settings of QA_ PACKAGE.
+Enter your Git repository link under Source Code Management Tab
+Navigate to Pre Steps and in Goals and Options field, write “package”
+
+Then navigate to the Post Build Actions, Select Archive the artifacts and write
+“**/target/devops.war”
+
+Apply and Save
+Navigate to the build Triggers of QA_ PACKAGE , check “Build after other projects are built” and
+add QA_METRICS_CHECK in Projects to Watch.
+Apply and Save
+Build QA_ PACKAGE.
+(Navigate to build other projects option of QA_METRICS_CHECK and mention QA_PACKAGE in
+Projects to Build)
+Apply and Save.
