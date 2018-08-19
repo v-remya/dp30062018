@@ -27,7 +27,7 @@ Step 3: Check the “build after other projects are built” checkbox
 Step 4: Select the “DEVELOPER_CODE_REVIEW” project that you have built earlier
 Step 5: Click on Save
 Step 6: Navigate to the Post build action in the DEVELOPER_CODE_REVIEW configuration
-settings and write “QA_TEST” in the Projects to build field. Apply and Save.
+settings and write “QA_UNIT_TEST” in the Projects to build field. Apply and Save.
 
 Create a freestyle project with the name QA_ METRICS _CHECK in Jenkins to check the test cases.
 Step 1: In your browser, navigate to Jenkins Home page
