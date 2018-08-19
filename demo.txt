@@ -3,6 +3,8 @@ Create a repository in your account by cloning the following github repository l
 
 https://github.com/ajoybharath/devopslab
 
+you might need maven and ant binaries on teh ame Jenkins host
+
 Create a freestyle project with the name DEVELOPER_COMPILE in Jenkins and configure to trigger the build from your own github account and build it.
 Make sure following plugins are installed in Jenkins
 1. github authentication,
