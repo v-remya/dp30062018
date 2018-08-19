@@ -1,0 +1,13 @@
+Create github account from your email address or you can use your existing github account.
+Create a repository in your account by cloning the following github repository link:
+
+https://github.com/ajoybharath/devopslab
+
+Create a freestyle project with the name DEVELOPER_COMPILE in Jenkins and configure to trigger the build from your own github account and build it.
+Make sure following plugins are installed in Jenkins
+1. github authentication,
+2. build pipeline
+
+Create a freestyle project with the name DEVELOPER_CODE_REVIEW in Jenkins to perform code review.
+
+Make sure pmd plugin is installed in Jenkins
