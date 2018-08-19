@@ -13,3 +13,17 @@ Make sure following plugins are installed in Jenkins
 Create a freestyle project with the name DEVELOPER_CODE_REVIEW in Jenkins to perform code review.
 
 Make sure pmd plugin is installed in Jenkins
+
++++++++++++++++++++++++++++++++++++ Next steps +++++++++++++++++++++++++++++++++++++++
+
+Create a freestyle project with the name QA_UNIT_TEST in Jenkins that is driven from job DEVELOPER_CODE_REVIEW and performs unit testing
+
+Create a freestyle project with the name QA_ METRICS _CHECK in Jenkins to check the test
+cases. 
+Make sure cobertura plugin is installed in Jenkins
+
+Create a freestyle project with the name QA_ PACKAGE in Jenkins to create an executable
+jar/war file.
+
+Create a pipeline named SAMPLE_COMPILE_VIEW with Build Pipeline View option, select
+DEVELOPER_COMPILE project under layout section and run the pipeline to check the console output
